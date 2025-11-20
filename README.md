@@ -7,6 +7,14 @@ Its assume customer already have a ECS cluster and application running in a serv
 
 ## 2. Application:
 This repository contains an application that bring a simple "Hello World!" without any DataDog configuration preloaded.
+This app.py file defines a simple Flask web application. It exposes three basic endpoints:
+
+   * `/`: Returns a "Hello, World!" message.
+   * `/work`: Simulates a task that takes 2 seconds to complete.
+   * `/error`: Intentionally triggers a division-by-zero error for demonstration purposes.
+
+  The application runs on 0.0.0.0:8080.
+  
 ecs-deploy-apm/
 ├───app-only/
 │   ├───app.py
