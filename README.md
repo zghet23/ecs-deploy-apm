@@ -1,4 +1,4 @@
-#Deploy of an application "Hello World!", using ECS and Fargate#
+## Deploy of an application "Hello World!", using ECS and Fargate#
 This README documents the process step by step to deploy and application in a Amazon ECS Cluster, reproducing 
 the environment of a customer with a existing cluster that desire integrate the DataDog agent in his application.
 
