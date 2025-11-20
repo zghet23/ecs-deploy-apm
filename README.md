@@ -1,12 +1,12 @@
-## Deploy of an application "Hello World!", using ECS and Fargate#
+## Deploying a "Hello World!" Application using ECS and Fargate
 This README documents the process step by step to deploy and application in a Amazon ECS Cluster, reproducing 
-the environment of a customer with a existing cluster that desire integrate the DataDog agent in his application.
+the environment of a customer with an existing cluster that desires to integrate. the DataDog agent in his application.
 
 ## 1. Context:
-Its assume customer already have a ECS cluster and application running in a service/task.
+It is assumed the customer already has a ECS cluster and application running in a service/task.
 
 ## 2. Application:
-This repository contains an application that bring a simple "Hello World!" without any DataDog configuration preloaded.
+This repository contains an application that is a simple "Hello World!" without any DataDog configuration preloaded.
 This app.py file defines a simple Flask web application. It exposes three basic endpoints:
 
    * `/`: Returns a "Hello, World!" message.
@@ -22,7 +22,7 @@ ecs-deploy-apm/
 │   └───requirements.txt
 
 ## 2.1 Application running in Cluster:
-Here is the code of the application running by himself without any DataDog configuration added yet.
+Here is the code of the application running by itself without any DataDog configuration added yet.
 Application running alone:
 ```
  import os
@@ -52,7 +52,7 @@ Application running alone:
 ```
 
 # 2.2 Requirements:
-The file requirements.txt contains just the necesary to run the application:
+The file requirements.txt contains just what is necessary to run the application:
 ```
 Flask
 gunicorn
@@ -92,10 +92,10 @@ CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
 3.- Click on **Create new Task Definition**.
 4.- **Name of the task definition**.
 5.- **Compatibility of the launch**: Choose **AWS Fargate**
-6.- **Execution role of th tasks**: Choose an existing role of create new one
+6.- **Task execution roles**: Choose an existing role of create new one
 7.- **Size of the task**: Assign CPU and Memory (ej. 0.5 vCPU, 1GB).
-8.- In **Container defitions**, click on **Add Container**:
-    * **Container Nanme**: 'app-only'.
+8.- In **Container definitions**, click on **Add Container**:
+    * **Container Name**: 'app-only'.
     * **Image**: "Image of the application".
     * **Port mappings**: ej: 8080 or the port of your application.
     * Click on **Add** and the in **Create**
@@ -105,7 +105,7 @@ CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
 
 1. Go to Cluster previously created
 2. In **services** tab click in **Create**
-3. **Type of launchment**: **Fargate**
+3. **Launch Type**: **Fargate**
 4. **Definition task**: Select the definition of the task previously created
 5. **Name of the service**: 'ecs-only-app' (or similar)
 6. **Number of desired task**: 1 (or desired)
