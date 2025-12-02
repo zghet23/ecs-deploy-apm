@@ -161,7 +161,7 @@ This section outlines how to integrate Datadog with a Python Flask application d
    2 gunicorn
    3 ddtrace```
 
-  #### 1.2. Update the Dockerfile
+ ```#### 1.2. Update the Dockerfile
 
   Modify your Dockerfile to use ddtrace-run, which automatically instruments the application. Set DD_AGENT_HOST to
   127.0.0.1 so the application sends traces to the sidecar agent over the shared task network.
