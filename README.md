@@ -156,10 +156,10 @@ This section outlines how to integrate Datadog with a Python Flask application d
 
   Ensure the ddtrace library is in your requirements.txt file.
 
-  `requirements.txt:
+  ```requirements.txt:
    1 Flask 
    2 gunicorn
-   3 ddtrace`
+   3 ddtrace```
 
   #### 1.2. Update the Dockerfile
 
